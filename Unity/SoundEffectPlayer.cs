@@ -35,6 +35,16 @@ public class SoundEffectPlayer : MonoBehaviour {
 public class SoundCategory : System.Object
 {
     public string name = "INSERT_NAME";
+    public SoundClipCategory category;
+    public AudioClip GetRandomClip()
+    {
+        return category.GetRandomClip();
+    }
+}
+
+[System.Serializable]
+public class SoundClipCategory
+{
     public AudioClip[] clips;
     public AudioClip GetRandomClip()
     {
