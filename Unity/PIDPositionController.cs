@@ -7,7 +7,7 @@ using System.Collections;
 /// \todo { Generalize to a varied purpose PID controller and switch logic to
 /// a HLSM }
 /// </summary>
-public class PIDController : MonoBehaviour {
+public class PIDPositionController : MonoBehaviour {
 
 
     public enum TrackingType { Transform, Vector, HoldPosition }

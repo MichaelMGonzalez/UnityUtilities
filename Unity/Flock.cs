@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(PIDController))]
+[RequireComponent(typeof(PIDPositionController))]
 public class Flock : MonoBehaviour {
 
     public enum Type { LEADER, FOLLOWER }
@@ -16,11 +16,11 @@ public class Flock : MonoBehaviour {
 
 
     private Rigidbody rb;
-    private PIDController pid;
+    private PIDPositionController pid;
     public Vector3 prevPos;
     private Flock leader;
 	void Start () {
-        pid = GetComponent<PIDController>();
+        pid = GetComponent<PIDPositionController>();
         prevPos = transform.position;
         originalDir = transform.forward;
 	}
