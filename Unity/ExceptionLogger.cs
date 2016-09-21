@@ -7,8 +7,9 @@ public class ExceptionLogger  {
     public static string LogException(Exception e, string prependToString, object reason )
     {
         string rv = "LOGGING FAILED";
-        prependToString += " Exception Occured in Scene: " + SceneManager.GetActiveScene().name + "\n";
         DateTime now = DateTime.Now;
+        prependToString += "Exception Occured in Scene: " + SceneManager.GetActiveScene().name + "\n";
+        prependToString += "Time of Exception:" + now.Hour + ":" + now.Minute; 
         string errorLogFileName = (Application.dataPath + "/Exceptions/");
         errorLogFileName += now.Year + "_" + now.Month + "_" + now.Day + "/" + reason.GetType() + "/";
         errorLogFileName = errorLogFileName.Replace("/", "\\");
