@@ -51,4 +51,10 @@ public class SoundClipCategory
         AudioClip rv = clips[Random.Range(0, clips.Length)];
         return rv;
     }
+    public void Play(AudioSource src)
+    {
+        if (clips.Length > 0)
+            src.PlayOneShot(GetRandomClip());
+
+    }
 }
