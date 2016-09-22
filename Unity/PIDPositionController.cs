@@ -43,7 +43,7 @@ public class PIDPositionController : MonoBehaviour {
     private Rigidbody rb;
     private bool is2DObj;
 
-	void Start() {
+	void OnEnable() {
         inverseDeltaTime = 1.0f / impuseRate;
         rb = GetComponent<Rigidbody>();
         integral = Vector3.zero;
@@ -58,6 +58,7 @@ public class PIDPositionController : MonoBehaviour {
     void OnDisable()
     {
         integral = Vector3.zero;
+        StopAllCoroutines();
     }
 
     IEnumerator Run()
