@@ -49,9 +49,6 @@ public class RhythmController : MonoBehaviour {
 
 	int currentMeasure;
 	int currentBeat;
-    int currentChannel = 1;
-    float startSwap = 0f;
-    float finishSwap = 0f;
 
 	/*Internals*/
 	MusicalTrack currentTrack;
@@ -287,12 +284,5 @@ public class RhythmController : MonoBehaviour {
         Debug.LogError("Check the GetNoteLength Function");
         return -1; // something really bad happened if we get here
     }
-    void OnLevelWasLoaded(int level)
-    {
-        if(channel1 != null)
-            channel1.Stop();
-        if(channel2 != null)
-		    channel2.Stop();
-    }
-  
+      
 }
