@@ -43,17 +43,24 @@ public class PIDPositionController : MonoBehaviour {
     private Rigidbody rb;
     private bool is2DObj;
 
-	void OnEnable() {
-        inverseDeltaTime = 1.0f / impuseRate;
+    void OnEnable()
+    {
         rb = GetComponent<Rigidbody>();
+        StartController();
+    }
+
+    public void StartController()
+    {
+        inverseDeltaTime = 1.0f / impuseRate;
         integral = Vector3.zero;
-        if(trackingType == TrackingType.HoldPosition)
+        if (trackingType == TrackingType.HoldPosition)
         {
             trackingType = TrackingType.Vector;
             destinationVector = transform.position;
         }
         StartCoroutine(Run());
-	}
+
+    }
 
     void OnDisable()
     {
