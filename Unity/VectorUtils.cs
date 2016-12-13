@@ -15,4 +15,11 @@ public class VectorUtils {
         return rv;
     }
 
+    public static Vector3 LocalToGlobal(Vector3 old, Vector3 reference, Vector3 dirr)
+    {
+
+        Quaternion q = Quaternion.FromToRotation(reference, dirr);
+        return q * old;
+    }
+
 }
