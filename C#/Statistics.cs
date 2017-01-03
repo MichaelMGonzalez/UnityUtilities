@@ -10,4 +10,8 @@ public class Statistics  {
     {
         return Mathf.Exp(-Mathf.Pow(mean - val, 2) / (2 * sigma * sigma));
     }
+    public static float Sigmoid(float a)
+    {
+        return 1f / (1f + Mathf.Exp(-a));
+    }
 }
