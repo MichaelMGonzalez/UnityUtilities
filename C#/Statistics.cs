@@ -14,4 +14,8 @@ public class Statistics  {
     {
         return 1f / (1f + Mathf.Exp(-a));
     }
+    public static float SafeExp(float value, float maximumValue, float tau)
+    {
+        return Mathf.Exp( (value - maximumValue + 1)/tau );
+    }
 }
